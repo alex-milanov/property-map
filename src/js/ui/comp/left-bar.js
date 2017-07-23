@@ -11,9 +11,18 @@ const {
 const breadcrumb = require('./breadcrumb');
 
 const menu = {
-	home: '/',
-	properties: '/properties',
-	areas: '/areas'
+	home: {
+		href: '/',
+		icon: 'fa-home'
+	},
+	properties: {
+		href: '/properties',
+		icon: 'fa-building-o'
+	},
+	areas: {
+		href: '/areas',
+		icon: 'fa-map-o'
+	}
 };
 
 const keys = o => Object.keys(o);
@@ -24,7 +33,11 @@ module.exports = ({state, actions}, content = []) => section('.left-bar', [].con
 			class: {
 				active: state.router.page === page
 			}
-		}, a(`[href="#${menu[page]}"]`, str.capitalize(page)))
+		}, a(`[href="#${menu[page].href}"]`, [
+			i(`.fa.${menu[page].icon}`),
+			' ',
+			str.capitalize(page)
+		]))
 	)),
 	state.router.page !== 'home' && breadcrumb({state, actions}) || [],
 	state[state.router.page] && state[state.router.page].view

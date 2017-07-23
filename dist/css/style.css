@@ -2488,10 +2488,11 @@ button.success {
   box-sizing: border-box;
   height: 35px;
   line-height: 35px;
-  font-size: 11px;
-  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  box-sizing: border-box;
   width: 100%;
-  display: block; }
+  display: block;
+  background: linear-gradient(to bottom, transparent 0%, rgba(245, 245, 245, 0.8) 95%, #cccccc 100%); }
   #ui ul.menu li {
     margin: 0px;
     padding: 0px;
@@ -2499,7 +2500,6 @@ button.success {
     box-sizing: border-box;
     height: 35px;
     line-height: 35px;
-    padding: 0px 7px;
     float: left;
     cursor: pointer; }
     #ui ul.menu li a {
@@ -2509,11 +2509,13 @@ button.success {
       box-sizing: border-box;
       height: 35px;
       line-height: 35px;
+      padding: 0px 14px;
       text-decoration: none; }
     #ui ul.menu li.active {
-      background: #eee; }
+      box-shadow: inset 0px 0px 7px rgba(170, 170, 170, 0.3);
+      background: linear-gradient(to bottom, transparent 0%, rgba(239, 239, 239, 0.3) 95%, #cccccc 100%); }
     #ui ul.menu li:hover {
-      background: #f5f5f5; }
+      background: linear-gradient(to bottom, transparent 0%, rgba(238, 238, 238, 0.8) 95%, #aaaaaa 100%); }
 
 #ui ul.breadcrumb {
   margin: 0px;
@@ -2527,7 +2529,7 @@ button.success {
   font-size: 11px;
   font-weight: 400;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  background: linear-gradient(to bottom, transparent 0%, rgba(250, 250, 250, 0.8) 95%, #dddddd 100%);
   list-style: none; }
   #ui ul.breadcrumb li {
     margin: 0px;
@@ -2553,18 +2555,27 @@ button.success {
   width: 100%;
   font-size: 11px;
   line-height: 14px; }
-  #ui table.properties td, #ui table.properties th {
-    padding: 0px 7px;
-    height: 35px; }
+  #ui table.properties thead {
+    background: linear-gradient(to bottom, transparent 30%, rgba(238, 238, 238, 0.5) 90%, rgba(221, 221, 221, 0.8) 100%); }
+    #ui table.properties thead th {
+      box-shadow: inset 0px 0px 15px #eee;
+      padding: 0px 14px;
+      height: 35px;
+      color: #333; }
   #ui table.properties td {
-    vertical-align: top; }
+    padding: 14px;
+    box-shadow: inset 0px 0px 5px #f5f5f5;
+    background: #fcfcfc;
+    vertical-align: top;
+    color: #333;
+    transition: background .1s; }
+    #ui table.properties td:hover {
+      background: #fafafa; }
     #ui table.properties td pre {
       margin: 0px;
       padding: 0px;
       display: inline-block;
       box-sizing: border-box; }
-  #ui table.properties tbody tr:hover {
-    background: #f5f5f5; }
 
 #ui ul.areas {
   margin: 0px;

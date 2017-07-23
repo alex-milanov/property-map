@@ -29,11 +29,7 @@ module.exports = ({state, actions}) =>
 			th(fieldToTitle(field))
 		))),
 		tbody(state.properties.list.map(doc =>
-			tr({
-				on: {
-					dblclick: ev => actions.router.go(`properties/${doc._id}`)
-				}
-			}, fields.map(field =>
+			tr(fields.map(field =>
 				td(obj.switch(field, {
 					default: () => doc[field],
 					address: () => pre(
