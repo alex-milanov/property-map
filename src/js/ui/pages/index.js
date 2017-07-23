@@ -12,7 +12,7 @@ const properties = require('./properties');
 const home = ({state, actions}) => section('.home', [
 	h1('Properties Map'),
 	p([
-		'The ', a('[href="#/properties"]', 'Properties'), ' provided are form the excerciseData.json',
+		'The ', a('[href="#/properties"]', 'Properties'), ' provided are from the excerciseData.json',
 		br(),
 		' processed through geolocation api with slight edit in order to work with it'
 	]),

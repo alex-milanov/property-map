@@ -72,10 +72,8 @@ state$
 	));
 
 // initial data
-request.get('assets/data/properties.json')
-	.observe()
-	.map(res => res.body)
-	.subscribe(list => list.forEach(doc => actions.properties.add(doc)));
+require('../assets/data/properties.json')
+	.forEach(doc => actions.properties.add(doc));
 
 // state -> ui
 const ui$ = state$.map(state => ui({state, actions}));

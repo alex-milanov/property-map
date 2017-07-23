@@ -37,7 +37,10 @@ module.exports = ({state, actions}) =>
 				td(obj.switch(field, {
 					default: () => doc[field],
 					address: () => pre(
-						keys(doc[field]).map(key => doc[field][key]).join('\n')
+						keys(doc[field])
+							.map(key => doc[field][key])
+							.filter(v => v !== '')
+							.join('\n')
 					),
 					location: () => pre(
 						JSON.stringify(doc.location, null, 2)
