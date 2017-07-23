@@ -1,6 +1,5 @@
 'use strict';
 
-
 const {
 	section, span, i,
 	form, input, label, button,
@@ -22,6 +21,11 @@ const fieldToTitle = field => str.fromCamelCase(field, '-')
 
 const keys = o => Object.keys(o);
 
+const pointInCircle = (p, c, r) => Math.sqrt(
+	(p[0] - c[0]) * (p[0] - c[0]) +
+	(p[1] - c[1]) * (p[1] - c[1])
+) < r;
+
 module.exports = ({state, actions}) =>
 	state.router.pageId && edit({state, actions})
 	|| table('.properties', [
@@ -41,10 +45,18 @@ module.exports = ({state, actions}) =>
 					location: () => pre(
 						JSON.stringify(doc.location, null, 2)
 					),
-					areas: () => state.areas.list.filter(area => pointInPolygon(
-						[doc.location.lat, doc.location.lng],
-						area.path.map(pos => [pos.lat, pos.lng])
-					)).map(area => area.name).join(', '),
+					areas: () => state.areas.list.filter(area =>
+						area.type === 'polygon'
+						? pointInPolygon(
+							[doc.location.lat, doc.location.lng],
+							area.path.map(pos => [pos.lat, pos.lng])
+						)
+						: pointInCircle(
+							[doc.location.lat, doc.location.lng],
+							[area.center.lat, area.center.lng],
+							area.radius / 100000
+						)
+					).map(area => area.name).join(', '),
 					actions: () => [
 						button('.fa.fa-pencil.primary', {on: {
 							click: ev => actions.router.go(`properties/${doc._id}`)

@@ -14,8 +14,7 @@ const edit = require('./edit');
 const create = require('./create');
 
 module.exports = ({state, actions}) =>
-	state.router.pageId === 'new' && create({state, actions})
-	|| state.router.pageId && edit({state, actions})
+	state.router.pageId && edit({state, actions})
 	|| ul('.areas', state.areas.list
 		/*
 		.filter(area => area.path.filter(pos =>

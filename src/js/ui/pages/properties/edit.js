@@ -10,11 +10,14 @@ const {
 const {obj, str} = require('iblokz-data');
 const formUtil = require('../../../util/form');
 
-const sub = (o, p, d = false) => (p instanceof Array)
-	? o[p[0]] && p.length > 1
-		? [sub(o[p[0]], p.slice(1))].map(sO => (sO !== undefined ? sO : d)).pop()
-		: o[p[0]]
-	: o[p] !== undefined ? o[p] : d;
+const sub = (o, p, d = false) =>
+	o === undefined
+		? d
+		: (p instanceof Array)
+			? o[p[0]] && p.length > 1
+				? [sub(o[p[0]], p.slice(1))].map(sO => (sO !== undefined ? sO : d)).pop()
+				: o[p[0]]
+			: o[p] !== undefined ? o[p] : d;
 
 const schema = {
 	owner: 'String',
@@ -89,7 +92,7 @@ module.exports = ({state, actions}) => form({
 }, [].concat(
 	keys(schema)
 		.map(key => parseField(schema[key], key))
-		.map(field => (console.log(field), field))
+		// .map(field => (console.log(field), field))
 		.reduce((els, field) => [].concat(els, field), [])
 		.map(field => formElement(field, state.properties.doc)),
 	button('.success[type="submit"]',

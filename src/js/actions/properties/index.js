@@ -1,5 +1,8 @@
 'use strict';
 
+const Rx = require('rx');
+const $ = Rx.Observable;
+
 const {obj} = require('iblokz-data');
 const objectId = require('bson-objectid');
 
@@ -95,6 +98,17 @@ const update = (id, data) =>
 			})
 		);
 
+const sync = list => $.from(list)
+	.flatMap(doc =>
+		addrToGeo(doc.address)
+			.map(body => body.results[0].geometry.location)
+			.map(location => Object.assign({}, doc, {
+				_id: objectId().str,
+				location
+			})))
+	.reduce((list, doc) => [].concat(list, doc), [])
+	.map(list => state => obj.patch(state, 'properties', {list}));
+
 module.exports = {
 	initial,
 	delete: _delete,
@@ -102,5 +116,6 @@ module.exports = {
 	create,
 	edit,
 	cancel,
-	update
+	update,
+	sync
 };

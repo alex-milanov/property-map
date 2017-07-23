@@ -50,7 +50,10 @@ if (module.hot) {
 // actions -> state
 const state$ = actions$
 	.startWith(() => actions.initial)
-	.scan((state, change) => change(state), {})
+	.map(change => (console.log(change), change))
+	.scan(function(state, change) {
+		return change(state);
+	}, {})
 	.map(state => (console.log(state), state))
 	.publish();
 
@@ -72,8 +75,7 @@ state$
 	));
 
 // initial data
-require('../assets/data/properties.json')
-	.forEach(doc => actions.properties.add(doc));
+actions.properties.sync(require('../assets/data/properties.json'));
 
 // state -> ui
 const ui$ = state$.map(state => ui({state, actions}));

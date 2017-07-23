@@ -2453,7 +2453,7 @@ button {
   background: rgba(255, 255, 255, 0.97);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
   line-height: 35px; }
-  #ui .left-bar form.edit input, #ui .left-bar form.edit label, #ui .left-bar form.edit button, #ui .left-bar form.create input, #ui .left-bar form.create label, #ui .left-bar form.create button {
+  #ui .left-bar form.edit input, #ui .left-bar form.edit label, #ui .left-bar form.edit button, #ui .left-bar form.edit select, #ui .left-bar form.create input, #ui .left-bar form.create label, #ui .left-bar form.create button, #ui .left-bar form.create select {
     margin: 0px;
     padding: 0px;
     display: inline-block;
@@ -2461,9 +2461,10 @@ button {
     height: 35px;
     line-height: 35px;
     display: block;
+    width: 100%;
     padding: 0px 7px;
     font-size: 12px; }
-  #ui .left-bar form.edit input, #ui .left-bar form.create input {
+  #ui .left-bar form.edit input, #ui .left-bar form.edit select, #ui .left-bar form.create input, #ui .left-bar form.create select {
     margin: 0px;
     padding: 0px;
     display: inline-block;
@@ -2478,11 +2479,22 @@ button {
     box-sizing: border-box;
     outline: none;
     transition: background .3s, box-shadow .3s; }
-    #ui .left-bar form.edit input:focus, #ui .left-bar form.create input:focus {
+    #ui .left-bar form.edit input:focus, #ui .left-bar form.edit select:focus, #ui .left-bar form.create input:focus, #ui .left-bar form.create select:focus {
       box-shadow: inset 0px 0px 3px #ccc;
       background: #f5f5f5; }
-    #ui .left-bar form.edit input.err, #ui .left-bar form.create input.err {
+    #ui .left-bar form.edit input.err, #ui .left-bar form.edit select.err, #ui .left-bar form.create input.err, #ui .left-bar form.create select.err {
       border: 1px solid red; }
+  #ui .left-bar form.edit select, #ui .left-bar form.create select {
+    padding: 0px 2px;
+    cursor: pointer; }
+    #ui .left-bar form.edit select option, #ui .left-bar form.create select option {
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      box-sizing: border-box; }
+    #ui .left-bar form.edit select:hover, #ui .left-bar form.create select:hover {
+      box-shadow: inset 0px 0px 3px #ccc;
+      background: #f5f5f5; }
   #ui .left-bar form.edit button, #ui .left-bar form.create button {
     border: 0px;
     width: 100%;
