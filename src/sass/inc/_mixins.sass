@@ -23,3 +23,14 @@
 =desktop
   @media (min-width: #{$desktop-width})
     @content
+
+=ui-button($h: 32px, $p: 10px)
+	+reset
+	box-sizing: border-box
+	height: $h
+	line-height: $h - 2*$p
+	padding: $p
+	cursor: pointer
+	font-size: $h / 2 - 2px
+	&:active
+		padding: ($p + 1) $p ($p - 1) $p

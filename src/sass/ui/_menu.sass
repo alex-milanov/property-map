@@ -1,0 +1,19 @@
+ul.menu
+	+header-height(35px)
+	font-size: 11px
+	border-bottom: 1px solid #eee
+	width: 100%
+	display: block
+	li
+		+header-height(35px)
+		padding: 0px 7px
+		float: left
+		cursor: pointer
+		a
+			+header-height(35px)
+			text-decoration: none
+		&.active
+			background: #eee
+		&:hover
+			background: #f5f5f5
+

@@ -2,8 +2,10 @@
 
 const {obj, arr} = require('iblokz-data');
 
-// namespaces=
-const counter = require('./counter');
+// namespaces
+const map = require('./map');
+const properties = require('./properties');
+const areas = require('./areas');
 
 // initial
 const initial = {
@@ -19,7 +21,9 @@ const arrToggle = (key, value) => state =>
 
 module.exports = {
 	initial,
-	counter,
+	map,
+	properties,
+	areas,
 	set,
 	toggle,
 	arrToggle

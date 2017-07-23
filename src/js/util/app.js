@@ -8,7 +8,7 @@ const {arr, obj} = require('iblokz-data');
 
 const observe = source => (source instanceof Rx.Observable)
   ? source
-  : (source.then instanceof Function)
+  : (source.then && source.then instanceof Function)
     ? Rx.Observable.fromPromise(source)
     : Rx.Observable.just(source);
 
