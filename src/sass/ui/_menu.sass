@@ -6,16 +6,17 @@ ul.menu
 	display: block
 	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(#f5f5f5, 0.8) 95%, rgba(#ccc, 1) 100%)
 	li
-		+header-height(35px)
+		+header-height(34px)
+		padding-top: 1px
 		float: left
 		cursor: pointer
 		a
-			+header-height(35px)
+			+header-height(34px)
 			padding: 0px 14px
+			color: #333
 			text-decoration: none
 		&.active
 			box-shadow: inset 0px 0px 7px rgba(#aaa, 0.3)
-			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(#efefef, 0.3) 95%, rgba(#ccc, 1) 100%)
 		&:hover
-			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(#eee, 0.8) 95%, rgba(#aaa, 1) 100%)
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(#eee, 0.7) 95%, rgba(#ccc, 0.5) 100%)
 

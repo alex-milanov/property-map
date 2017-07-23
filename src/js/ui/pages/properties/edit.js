@@ -92,7 +92,9 @@ module.exports = ({state, actions}) => form({
 		.map(field => (console.log(field), field))
 		.reduce((els, field) => [].concat(els, field), [])
 		.map(field => formElement(field, state.properties.doc)),
-	button('.success[type="submit"]', 'Add')
+	button('.success[type="submit"]',
+		state.properties.view === 'create' ? 'Add' : 'Save'
+	)
 ));
 
 // [

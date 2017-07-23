@@ -2339,6 +2339,10 @@ body {
   padding: 0px;
   display: inline-block;
   box-sizing: border-box;
+  font-size: 12px;
+  color: #333; }
+
+body, h1, h2, h3, input, label, textarea, pre {
   font-family: Helvetica, Arial, sans-serif; }
 
 .left {
@@ -2359,57 +2363,54 @@ a {
   a:hover {
     text-decoration: underline; }
 
-button.fa {
-  margin: 0px;
-  padding: 0px;
-  display: inline-block;
-  box-sizing: border-box;
-  height: 18px;
-  line-height: 18px;
-  border-radius: 100%;
-  border: 0px;
-  width: 18px;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-  vertical-align: middle; }
-  button.fa::before {
+button {
+  text-shadow: 1px 1px 0px #aaa; }
+  button.fa {
     margin: 0px;
     padding: 0px;
     display: inline-block;
     box-sizing: border-box;
     height: 18px;
     line-height: 18px;
+    border-radius: 100%;
+    border: 0px;
+    width: 18px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
     vertical-align: middle; }
-  button.fa:not(:first-child) {
-    margin-left: 7px; }
-
-button:hover {
-  background: #ccc; }
-
-button.primary {
-  color: #fff;
-  background: #9af; }
-  button.primary:hover {
-    background: #8095ff; }
-
-button.info {
-  color: #fff;
-  background: #ade; }
-  button.info:hover {
-    background: #95d5ea; }
-
-button.danger {
-  color: #fff;
-  background: #e99; }
-  button.danger:hover {
-    background: #ea8383; }
-
-button.success {
-  color: #fff;
-  background: #9e9; }
-  button.success:hover {
-    background: #83ea83; }
+    button.fa::before {
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      box-sizing: border-box;
+      height: 18px;
+      line-height: 18px;
+      vertical-align: middle; }
+    button.fa:not(:first-child) {
+      margin-left: 7px; }
+  button:hover {
+    background: #ccc; }
+  button.primary {
+    color: #fff;
+    background: #9af; }
+    button.primary:hover {
+      background: #8095ff; }
+  button.info {
+    color: #fff;
+    background: #ade; }
+    button.info:hover {
+      background: #95d5ea; }
+  button.danger {
+    color: #fff;
+    background: #e99; }
+    button.danger:hover {
+      background: #ea8383; }
+  button.success {
+    color: #fff;
+    background: #9e9; }
+    button.success:hover {
+      background: #83ea83; }
 
 #ui h1 {
   margin: 0px;
@@ -2457,19 +2458,29 @@ button.success {
     padding: 0px;
     display: inline-block;
     box-sizing: border-box;
-    height: 26px;
-    line-height: 26px;
+    height: 35px;
+    line-height: 35px;
     display: block;
     padding: 0px 7px;
     font-size: 12px; }
   #ui .left-bar form.edit input, #ui .left-bar form.create input {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 7px;
     border: 0px;
     width: 100%;
-    box-shadow: inset 0px 0px 7px #eee;
+    box-shadow: inset 0px 0px 3px #eee;
+    background: #fafafa;
     box-sizing: border-box;
-    outline: none; }
+    outline: none;
+    transition: background .3s, box-shadow .3s; }
     #ui .left-bar form.edit input:focus, #ui .left-bar form.create input:focus {
-      box-shadow: inset 0px 0px 10px #eee; }
+      box-shadow: inset 0px 0px 3px #ccc;
+      background: #f5f5f5; }
     #ui .left-bar form.edit input.err, #ui .left-bar form.create input.err {
       border: 1px solid red; }
   #ui .left-bar form.edit button, #ui .left-bar form.create button {
@@ -2478,8 +2489,8 @@ button.success {
     outline: none;
     cursor: pointer; }
   #ui .left-bar form.edit label, #ui .left-bar form.create label {
-    font-weight: bold;
-    margin-top: 7px; }
+    color: #777;
+    font-weight: bold; }
 
 #ui ul.menu {
   margin: 0px;
@@ -2498,8 +2509,9 @@ button.success {
     padding: 0px;
     display: inline-block;
     box-sizing: border-box;
-    height: 35px;
-    line-height: 35px;
+    height: 34px;
+    line-height: 34px;
+    padding-top: 1px;
     float: left;
     cursor: pointer; }
     #ui ul.menu li a {
@@ -2507,15 +2519,15 @@ button.success {
       padding: 0px;
       display: inline-block;
       box-sizing: border-box;
-      height: 35px;
-      line-height: 35px;
+      height: 34px;
+      line-height: 34px;
       padding: 0px 14px;
+      color: #333;
       text-decoration: none; }
     #ui ul.menu li.active {
-      box-shadow: inset 0px 0px 7px rgba(170, 170, 170, 0.3);
-      background: linear-gradient(to bottom, transparent 0%, rgba(239, 239, 239, 0.3) 95%, #cccccc 100%); }
+      box-shadow: inset 0px 0px 7px rgba(170, 170, 170, 0.3); }
     #ui ul.menu li:hover {
-      background: linear-gradient(to bottom, transparent 0%, rgba(238, 238, 238, 0.8) 95%, #aaaaaa 100%); }
+      background: linear-gradient(to bottom, transparent 0%, rgba(238, 238, 238, 0.7) 95%, rgba(204, 204, 204, 0.5) 100%); }
 
 #ui ul.breadcrumb {
   margin: 0px;
@@ -2539,6 +2551,8 @@ button.success {
     height: 35px;
     line-height: 35px;
     padding: 0px 7px 0px 0px; }
+    #ui ul.breadcrumb li a {
+      color: #333; }
     #ui ul.breadcrumb li:first-child i.fa {
       margin-right: 7px; }
     #ui ul.breadcrumb li:not(:first-child):before {
@@ -2582,7 +2596,6 @@ button.success {
   padding: 0px;
   display: inline-block;
   box-sizing: border-box;
-  font-size: 11px;
   width: 100%;
   list-style: none; }
   #ui ul.areas li {

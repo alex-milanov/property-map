@@ -72,11 +72,11 @@ const hook = ({state$, actions}) => {
 							pos.lat,
 							pos.lng
 						)),
-						strokeColor: '#000000',
-						strokeOpacity: 0.8,
-						strokeWeight: 2,
-						fillColor: '#000000',
-						fillOpacity: 0.35
+						strokeColor: '#333',
+						strokeOpacity: 0.7,
+						strokeWeight: 1,
+						fillColor: '#aaa',
+						fillOpacity: 0.2
 					});
 					polygon.setMap(map);
 					window.google.maps.event.addListener(polygon, 'click', () => actions.router.go(`areas/${area._id}`));
@@ -136,10 +136,10 @@ const hook = ({state$, actions}) => {
 					draggable: true, // turn off if it gets annoying
 					editable: true,
 					strokeColor: '#FF0000',
-					strokeOpacity: 0.8,
-					strokeWeight: 2,
+					strokeOpacity: 0.7,
+					strokeWeight: 1,
 					fillColor: '#FF0000',
-					fillOpacity: 0.35
+					fillOpacity: 0.2
 				});
 				polygon.setMap(map);
 				if (state.areas.view === 'create') actions.set(['areas', 'doc', 'path'], polygon.getPath().getArray().map(pos => pos.toJSON()));
