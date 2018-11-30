@@ -9,8 +9,7 @@ const {obj, arr} = require('iblokz-data');
 
 let map;
 let pos = {
-	lat: 51.5073835,
-	lng: -0.1277801
+	lat: 51.51355432027329, lng: -0.09394892635838037
 };
 
 let geometry = null;
@@ -48,7 +47,7 @@ const hook = ({state$, actions}) => {
 		.subscribe(mapEl => {
 			map = new window.google.maps.Map(mapEl, {
 				center: pos,
-				zoom: 14
+				zoom: 13
 			});
 			window.google.maps.event.addListener(map, 'bounds_changed', () => {
 				console.log(map.getBounds().toJSON());
