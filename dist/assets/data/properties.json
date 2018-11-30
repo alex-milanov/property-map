@@ -1,37 +1,26 @@
 [
   {
-    "owner": "carlos",
+    "owner": "steve",
     "address": {
-        "line1": "Flat 5",
-        "line4": "7 Westbourne Terrace",
-        "postCode": "W2 3UL",
-        "city": "London",
-        "country": "U.K."
-    },
-    "incomeGenerated": 2000.34
-  },
-  {
-    "owner": "ankur",
-    "address": {
-        "line1": "4",
+        "line1": "7",
         "line2": "Tower Mansions",
         "line4": "86-87 Grange Road",
         "postCode": "SE1 3BW",
         "city": "London",
         "country": "U.K."
     },
-    "incomeGenerated": 1000
+    "incomeGenerated": 700
   },
   {
-    "owner": "elaine",
+    "owner": "ruby",
     "address": {
-        "line1": "4",
+        "line1": "5",
         "line2": "332b",
         "line4": "Goswell Road",
         "postCode": "EC1V 7LQ",
         "city": "London",
         "country": "U.K."
     },
-    "incomeGenerated": 1200
+    "incomeGenerated": 1100
   }
 ]
